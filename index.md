@@ -6,4 +6,4 @@ title: Introduction
 Introduction
 ------------
 
-VUEngine Studio is AMAZING.
+Hello! I am going to be the VUEngine Studio documentation. I still have to be written.

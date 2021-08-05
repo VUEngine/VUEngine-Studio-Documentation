@@ -145,15 +145,15 @@ If the animated sprites at both ends are ObjectSprites, then the inspection of O
 
 where each number signifies and index in CHAR memory; then if the 9 CHARs (0-8) that form the first frame of animation have the following appearance: 
 
-![](/documentation/images/engine-graphics-animation-single-char-memory-inspection-frame-0.)png
+![](/documentation/images/engine-graphics-animation-single-char-memory-inspection-frame-0.png)
 
 then the second group of CHARs (9-17), that form the second frame of animation, must look like:
 
-![](/documentation/images/engine-graphics-animation-single-char-memory-inspection-frame-1.)png
+![](/documentation/images/engine-graphics-animation-single-char-memory-inspection-frame-1.png)
 
 and finally, the third group of CHARs (9-26), that form the last frame of animation, must look like:
 
-![](/documentation/images/engine-graphics-animation-single-char-memory-inspection-frame-2.)png
+![](/documentation/images/engine-graphics-animation-single-char-memory-inspection-frame-2.png)
 
 ###### Downsides:
 - Impacts performance.
