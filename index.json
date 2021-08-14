@@ -5,7 +5,7 @@
       "file": "setup/installation"
     }
   ],
-  "The Basics": [
+  "User Interface": [
     {
       "name": "The editor window",
       "file": ""
@@ -19,8 +19,20 @@
       "file": ""
     },
     {
-      "name": "Building",
-      "file": ""
+      "name": "Build View",
+      "file": "user-interface/build-view"
+    },
+    {
+      "name": "Flash Carts View",
+      "file": "user-interface/flash-carts-view"
+    },
+    {
+      "name": "Emulator",
+      "file": "user-interface/emulator"
+    },
+    {
+      "name": "Plugins View",
+      "file": "user-interface/plugins-view"
     }
   ],
   "Assets": [
