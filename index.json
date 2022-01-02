@@ -3,6 +3,10 @@
     {
       "name": "Installation",
       "file": "setup/installation"
+    },
+    {
+      "name": "Enhancing build times on Windows",
+      "file": "setup/enhancing-build-times-on-windows"
     }
   ],
   "User Interface": [
