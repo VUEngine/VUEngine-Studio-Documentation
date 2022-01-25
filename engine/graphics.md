@@ -118,19 +118,19 @@ Since there can be sprites with many frames of animations like the game's main c
 When using this animation type, the engine allocates a new CharSet and Texture for each request, and each time a new frame must be show, the engines writes directly to CHAR memory.
 For example, each one of the following AnimatedSprite has its own Texture and CharSet:
 
-![](/documentation/images/engine-graphics-animation-single-sample.png)
+![](/documentation/images/engine/animations/engine-graphics-animation-single-sample.png)
 
 The inspection of the CHAR memory reveals that the CHARs corresponding to the current frame of animation of each AnimatedSprite, have been loaded, even if they belong to the same CHAR definition:
 
-![](/documentation/images/engine-graphics-animation-single-char-memory-inspection.png)
+![](/documentation/images/engine/animations/engine-graphics-animation-single-char-memory-inspection.png)
 
 If all animated sprites are BgmapSprites, then the inspection of BGMAP memory will show that only one frame of animation is loaded for each AnimatedSprite:
 
-![](/documentation/images/engine-graphics-animation-single-bgmap-memory-inspection.png)
+![](/documentation/images/engine/animations/engine-graphics-animation-single-bgmap-memory-inspection.png)
 
 If the animated sprites at both ends are ObjectSprites, then the inspection of OBJ memory will show the appropriate frame of animation for each AnimatedSprite:
 
-![](/documentation/images/engine-graphics-animation-single-object-memory-inspection.png)
+![](/documentation/images/engine/animations/engine-graphics-animation-single-object-memory-inspection.png)
 
 ###### Usages: 
 - This type of animation should be used for animated sprites with too many animation frames or whose graphics occupies too many CHARs.
@@ -145,15 +145,15 @@ If the animated sprites at both ends are ObjectSprites, then the inspection of O
 
 where each number signifies and index in CHAR memory; then if the 9 CHARs (0-8) that form the first frame of animation have the following appearance: 
 
-![](/documentation/images/engine-graphics-animation-single-char-memory-inspection-frame-0.png)
+![](/documentation/images/engine/animations/engine-graphics-animation-single-char-memory-inspection-frame-0.png)
 
 then the second group of CHARs (9-17), that form the second frame of animation, must look like:
 
-![](/documentation/images/engine-graphics-animation-single-char-memory-inspection-frame-1.png)
+![](/documentation/images/engine/animations/engine-graphics-animation-single-char-memory-inspection-frame-1.png)
 
 and finally, the third group of CHARs (9-26), that form the last frame of animation, must look like:
 
-![](/documentation/images/engine-graphics-animation-single-char-memory-inspection-frame-2.png)
+![](/documentation/images/engine/animations/engine-graphics-animation-single-char-memory-inspection-frame-2.png)
 
 ###### Downsides:
 - Impacts performance.
@@ -163,19 +163,19 @@ and finally, the third group of CHARs (9-26), that form the last frame of animat
 When using this animation type, the engine allocates a new CharSet once (and only a Texture if BgmapSprites are used); and for each new request with the same char definition, returns the same reference(s). Each time a new frame must be show, the engines writes directly to CHAR memory, and every Sprite that uses the same CharSet will display the change.
 In the following example, the AnimatedSprite in the center uses an __ANIMATED_SINGLE `CharSet`, while the animated in game entities at both ends use the same __ANIMATED_SHARED `CharSet`:
 
-![](/documentation/images/engine-graphics-animation-shared-sample.png)
+![](/documentation/images/engine/animations/engine-graphics-animation-shared-sample.png)
 
 The inspection of the CHAR memory reveals that the CHARs corresponding to the current frame of animation of the first and second animated sprites, have been loaded, being the first CHAR's sequence the one shared by the animated sprites at both ends of the screen:
 
-![](/documentation/images/engine-graphics-animation-shared-char-memory-inspection.png)
+![](/documentation/images/engine/animations/engine-graphics-animation-shared-char-memory-inspection.png)
 
 If all animated sprites are BgmapSprites, then the inspection of BGMAP memory will show that only one BgmapTexture has been loaded for the animated sprites at both ends of the screen:
 
-![](/documentation/images/engine-graphics-animation-shared-bgmap-memory-inspection.png)
+![](/documentation/images/engine/animations/engine-graphics-animation-shared-bgmap-memory-inspection.png)
 
 If the animated sprites at both ends are ObjectSprites, then the inspection of OBJ memory will show the same frame of animation for both:
 
-![](/documentation/images/engine-graphics-animation-shared-object-memory-inspection.png)
+![](/documentation/images/engine/animations/engine-graphics-animation-shared-object-memory-inspection.png)
 
 ###### Usages:
 - This type of animation should be used when there are many instances of the same AnimatedSprite definition, which has with too many animation frames or whose graphics occupies too many CHARs, and whose animations can be synchronized.
@@ -201,19 +201,19 @@ This animation type works exactly the same as the __ANIMATED_SHARED, but for eac
 When using this animation type, the engine allocates a new CharSet once (an only Texture when using BgmapSprites); and for each new request, with the same char definition and allocation type, returns the same reference(s). Depending on the Sprite's type, when a new frame of animation must be shown, the engine either modifies the WORLD's mx and my values, or writes to OBJ memory. 
 In the following example, the AnimatedSprite in the center uses an __ANIMATED_SHARED CharSet, while the animated sprites at both ends use the same __ANIMATED_MULTI `CharSet`:
 
-![](/documentation/images/engine-graphics-animation-multi-sample.png)
+![](/documentation/images/engine/animations/engine-graphics-animation-multi-sample.png)
 
 The inspection of the CHAR memory reveals that all the CHARs used by all the animation frames have been loaded into CHAR memory for the animated sprites at both ends of the screen (the last CHARs correspond to the AnimatedSprite at the center, that uses an __ANIMATED_SINGLE CharSet):
 
-![](/documentation/images/engine-graphics-animation-multi-char-memory-inspection.png)
+![](/documentation/images/engine/animations/engine-graphics-animation-multi-char-memory-inspection.png)
 
 If all the animated sprites are BgmapSprites, then the inspection of BGMAP memory will show that all frames of animation have been loaded for the animated sprites at both ends of the screen (the last frame corresponds to the AnimatedSprite in the center, that uses an __ANIMATED_SINGLE CharSet):
 
-![](/documentation/images/engine-graphics-animation-multi-bgmap-memory-inspection.png)
+![](/documentation/images/engine/animations/engine-graphics-animation-multi-bgmap-memory-inspection.png)
 
 If the animated sprites at both ends are ObjectSprites, then the inspection of OBJ memory will show the corresponding animation frame has been loaded for each of the animated sprites at each end of the screen:
 
-![](/documentation/images/engine-graphics-animation-multi-object-memory-inspection.png)
+![](/documentation/images/engine/animations/engine-graphics-animation-multi-object-memory-inspection.png)
 
 ###### Usages:
 - This type of animation should be used for animated sprites with too many animation frames or whose graphics occupies too many CHARs, but when their instances must not be necessarily synchronized.

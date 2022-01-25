@@ -7,6 +7,10 @@
     {
       "name": "Enhancing build times on Windows",
       "file": "setup/enhancing-build-times-on-windows"
+    },
+    {
+      "name": "Getting Started",
+      "file": "getting-started"
     }
   ],
   "User Interface": [

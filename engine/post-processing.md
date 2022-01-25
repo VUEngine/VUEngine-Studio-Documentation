@@ -44,7 +44,7 @@ Since the image frame has been fully processed and written to the frame buffer a
 
 For example, shift down each row of the screen by a different amount of bytes to achieve a wave like wobble effect as seen in the screen below. The `VUEngine Platformer Demo` comes with this and a few more example post-processing effects, which can be found in the file `source/components/PostProcessingEffects.c`.
 
-![](/documentation/images/engine-post-processing-effect-wobble.png)
+![](/documentation/images/engine/post-processing/engine-post-processing-effect-wobble.png)
 
 
 Advices
