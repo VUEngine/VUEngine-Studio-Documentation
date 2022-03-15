@@ -3,8 +3,7 @@ layout: documentation
 title: FAQ
 ---
 
-FAQ
-===
+# FAQ
 
 **All of a sudden, I am getting a lot of different exceptions which I can't seem to find a reason for in the code. What's going on?**
 

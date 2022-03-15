@@ -3,7 +3,6 @@ layout: documentation
 title: Build View
 ---
 
-Build View
-==========
+# Build View
 
 ...

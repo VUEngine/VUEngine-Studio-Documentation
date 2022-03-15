@@ -1,130 +1,136 @@
 {
+  "Introduction": [
+    {
+      "name": "Introduction",
+      "url": "/documentation/"
+    }
+  ],
   "Setup": [
     {
       "name": "Installation",
-      "file": "setup/installation"
+      "url": "/documentation/setup/installation/"
     },
     {
       "name": "Enhancing build times on Windows",
-      "file": "setup/enhancing-build-times-on-windows"
+      "url": "/documentation/setup/enhancing-build-times-on-windows/"
     },
     {
       "name": "Getting Started",
-      "file": "getting-started"
+      "url": "/documentation/setup/getting-started/"
     }
   ],
   "User Interface": [
     {
       "name": "The editor window",
-      "file": ""
+      "url": "/documentation//"
     },
     {
       "name": "Keyboard Shortcuts",
-      "file": ""
+      "url": "/documentation//"
     },
     {
       "name": "Version Control",
-      "file": ""
+      "url": "/documentation//"
     },
     {
       "name": "Build View",
-      "file": "user-interface/build-view"
+      "url": "/documentation/user-interface/build-view/"
     },
     {
       "name": "Flash Carts View",
-      "file": "user-interface/flash-carts-view"
+      "url": "/documentation/user-interface/flash-carts-view/"
     },
     {
       "name": "Emulator",
-      "file": "user-interface/emulator"
+      "url": "/documentation/user-interface/emulator/"
     },
     {
       "name": "Plugins View",
-      "file": "user-interface/plugins-view"
+      "url": "/documentation/user-interface/plugins-view/"
     }
   ],
   "Assets": [
     {
       "name": "Images",
-      "file": ""
+      "url": "/documentation//"
     },
     {
       "name": "Music",
-      "file": ""
+      "url": "/documentation//"
     }
   ],
   "Settings": [
     {
       "name": "Project config",
-      "file": ""
+      "url": "/documentation//"
     },
     {
       "name": "Engine config",
-      "file": ""
+      "url": "/documentation//"
     },
     {
       "name": "ROM Header",
-      "file": ""
+      "url": "/documentation//"
     }
   ],
   "Engine": [
     {
       "name": "Introduction",
-      "file": "engine/introduction"
+      "url": "/documentation/engine/introduction/"
     },
     {
       "name": "Coding Standards",
-      "file": "engine/coding-standards"
+      "url": "/documentation/engine/coding-standards/"
     },
     {
       "name": "Config Files",
-      "file": "engine/config-files"
+      "url": "/documentation/engine/config-files/"
     },
     {
       "name": "Graphics",
-      "file": "engine/graphics"
+      "url": "/documentation/engine/graphics/"
     },
     {
       "name": "In-game Object Types",
-      "file": "engine/in-game-object-types"
+      "url": "/documentation/engine/in-game-object-types/"
     },
     {
       "name": "Object Interaction",
-      "file": "engine/object-interaction"
+      "url": "/documentation/engine/object-interaction/"
     },
     {
       "name": "Object Oriented Programming",
-      "file": "engine/object-oriented-programming"
+      "url": "/documentation/engine/object-oriented-programming/"
     },
     {
       "name": "Post Processing",
-      "file": "engine/post-processing"
+      "url": "/documentation/engine/post-processing/"
     },
     {
       "name": "Printing",
-      "file": "engine/printing"
+      "url": "/documentation/engine/printing/"
     },
     {
       "name": "Sprite Effects",
-      "file": "engine/sprite-effects"
+      "url": "/documentation/engine/sprite-effects/"
     },
     {
       "name": "Stage",
-      "file": "engine/stage"
+      "url": "/documentation/engine/stage/"
     },
     {
       "name": "Work RAM",
-      "file": "engine/work-ram"
+      "url": "/documentation/engine/work-ram/"
     }
   ],
   "Troubleshooting": [
     {
       "name": "FAQ",
-      "file": ""
+      "url": "/documentation//"
     },
     {
       "name": "Debugging",
-      "file": ""
+      "url": "/documentation//"
     }
   ]
 }

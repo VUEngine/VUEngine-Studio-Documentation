@@ -3,7 +3,6 @@ layout: documentation
 title: Plugins View
 ---
 
-Plugins View
-============
+# Plugins View
 
 ...

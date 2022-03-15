@@ -3,14 +3,11 @@ layout: documentation
 title: Post-processing
 ---
 
-Post-processing
-===============
+# Post-processing
 
 The engine supports post-processing effects that allow the direct manipulation of the pixels drawn by the VIP before the current game frame is show in the Virtual Boy's displays.
 
-
-Usage
------
+## Usage
 
 To apply a post-processing effect register it using the following call:
 
@@ -20,7 +17,7 @@ Game::pushBackProcessingEffect(postProcessingEffectFunctionPointer, spatialObjec
 
 To remove a previously registered post-processing effect use the following code:
 
-```cpp	
+```cpp
 Game::removePostProcessingEffect(postProcessingEffectFunctionPointer, spatialObject);
 ```
 
@@ -29,16 +26,14 @@ A PostProcessingEffect is a pointer to a function with the following signature:
 ```cpp
 void PostProcessingEffects::dummyEffect(u32 currentDrawingFrameBufferSet, SpatialObject spatialObject)
 ```
-	
-It is possible to pass a SpatialObject to the post processing effect so processed region of the screen can be relative to that Object.  
+
+It is possible to pass a SpatialObject to the post processing effect so processed region of the screen can be relative to that Object.
 
 All registered post-processing effects are removed when the Game changes state.
 
 It is possible to apply several post processes at once and thus combine their effects.
 
-
-Applications
-------------
+## Applications
 
 Since the image frame has been fully processed and written to the frame buffer at the moment post-processing kicks in, you are free to manipulate the image in any way you like. You can thus use post-processing to achieve visual effects which would not be possible by other means on the Virtual Boy.
 
@@ -46,9 +41,7 @@ For example, shift down each row of the screen by a different amount of bytes to
 
 ![](/documentation/images/engine/post-processing/engine-post-processing-effect-wobble.png)
 
-
-Advices
--------
+## Advices
 
 Effects like the aforementioned wobble effect might look impressive and even perform well on emulators, but they're not feasible for use on real hardware, since accessing the framebuffer is very slow. The problem is that, for each framebuffer access, the hardware has to wait a certain amount of CPU cycles. 1 to write and 3(!) for read access. Since the wobble effect reads and then writes almost the entire screen, it's very slow on a real Virtual Boy.
 
