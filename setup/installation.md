@@ -23,7 +23,7 @@ Note that binaries are are neither signed nor authored and macOS might warn you 
 
 You may need to install additional libraries to be able to build your code.
 
-        brew reinstall libmpc
+    brew reinstall libmpc
 
 ## Linux
 

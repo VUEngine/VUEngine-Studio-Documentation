@@ -17,46 +17,96 @@
     {
       "name": "Getting Started",
       "url": "/documentation/setup/getting-started/"
+    },
+    {
+      "name": "Usage with other libraries",
+      "url": "/documentation/setup/usage-with-other-libraries/"
     }
   ],
-  "User Interface": [
+  "Editor Basics": [
     {
-      "name": "The editor window",
-      "url": "/documentation//"
+      "name": "User Interface",
+      "url": "/documentation/basics/user-interface/"
+    },
+    {
+      "name": "Settings",
+      "url": "/documentation/basics/settings/"
+    },
+    {
+      "name": "Themes",
+      "url": "/documentation/basics/themes/"
     },
     {
       "name": "Keyboard Shortcuts",
-      "url": "/documentation//"
+      "url": "/documentation/basics/keyboard-shortcuts/"
+    },
+    {
+      "name": "Extensions",
+      "url": "/documentation/basics/extensions/"
+    },
+    {
+      "name": "Basic Editing",
+      "url": "/documentation/basics/basic-editing/"
+    },
+    {
+      "name": "Intellisense",
+      "url": "/documentation/basics/intellisense/"
+    },
+    {
+      "name": "Code Navigation",
+      "url": "/documentation/basics/code-navigation/"
     },
     {
       "name": "Version Control",
-      "url": "/documentation//"
+      "url": "/documentation/basics/version-control/"
     },
     {
-      "name": "Build View",
-      "url": "/documentation/user-interface/build-view/"
+      "name": "Integrated Terminal",
+      "url": "/documentation/basics/integrated-terminal/"
     },
     {
-      "name": "Flash Carts View",
-      "url": "/documentation/user-interface/flash-carts-view/"
+      "name": "Tasks",
+      "url": "/documentation/basics/tasks/"
+    },
+    {
+      "name": "Workspaces",
+      "url": "/documentation/basics/workspaces/"
+    },
+    {
+      "name": "Accessibility",
+      "url": "/documentation/basics/accessibility/"
+    }
+  ],
+  "User Guide": [
+    {
+      "name": "Building",
+      "url": "/documentation/user-guide/building/"
+    },
+    {
+      "name": "Flash Carts",
+      "url": "/documentation/user-guide/flash-carts/"
     },
     {
       "name": "Emulator",
-      "url": "/documentation/user-interface/emulator/"
+      "url": "/documentation/user-guide/emulator/"
     },
     {
-      "name": "Plugins View",
-      "url": "/documentation/user-interface/plugins-view/"
+      "name": "VUEngine Plugins",
+      "url": "/documentation/user-guide/vuengine-plugins/"
     }
   ],
   "Assets": [
     {
       "name": "Images",
-      "url": "/documentation//"
+      "url": "/documentation/assets/images/"
     },
     {
       "name": "Music",
-      "url": "/documentation//"
+      "url": "/documentation/assets/music/"
+    },
+    {
+      "name": "Stages",
+      "url": "/documentation/assets/stages/"
     }
   ],
   "Settings": [

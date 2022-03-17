@@ -19,11 +19,6 @@ For a description of the configuration parameters check the config.h file.
 
 The engine supports various options for its compilation. These options are provided by each game in a file called config.make. Among these are:
 
-- The compilation type:
-  - Debug: adds lots of runtime assertions. Enables debugging tools too. It is recommended to use the sram sections for the memory pools when debugging in order to avoid stack overflows (SRAM as WRAM only works on emulators).
-  - Release: Removes most asserts. For shipping only!
-    - Tools: Adds debugging tools without all the debug checking.
-    - Preprocessor: The .o files are preprocessor's output instead of compiler's.
 - Optimization option passed to the compiler
 - Warning option passed to the compiler
 - Control over the usage of the frame pointer in the output code
