@@ -93,34 +93,14 @@
     {
       "name": "VUEngine Plugins",
       "url": "/documentation/user-guide/vuengine-plugins/"
-    }
-  ],
-  "Assets": [
-    {
-      "name": "Images",
-      "url": "/documentation/assets/images/"
     },
     {
-      "name": "Music",
-      "url": "/documentation/assets/music/"
+      "name": "Assets",
+      "url": "/documentation/user-guide/assets/"
     },
     {
-      "name": "Stages",
-      "url": "/documentation/assets/stages/"
-    }
-  ],
-  "Settings": [
-    {
-      "name": "Project config",
-      "url": "/documentation//"
-    },
-    {
-      "name": "Engine config",
-      "url": "/documentation//"
-    },
-    {
-      "name": "ROM Header",
-      "url": "/documentation//"
+      "name": "Configs",
+      "url": "/documentation/user-guide/configs/"
     }
   ],
   "Engine": [
@@ -173,14 +153,10 @@
       "url": "/documentation/engine/work-ram/"
     }
   ],
-  "Troubleshooting": [
+  "Tutorials": [
     {
-      "name": "FAQ",
-      "url": "/documentation//"
-    },
-    {
-      "name": "Debugging",
-      "url": "/documentation//"
+      "name": "Video Tutorials",
+      "url": "/documentation/tutorials/video-tutorials/"
     }
   ]
 }

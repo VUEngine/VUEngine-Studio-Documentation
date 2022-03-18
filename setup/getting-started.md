@@ -23,4 +23,4 @@ The `New Project` dialog allows you to create a new project based on various tem
 
 <a href="/documentation/images/getting-started/VUEngine-Studio-New-Project-Dialog.png"><img src="/documentation/images/getting-started/VUEngine-Studio-New-Project-Dialog.png" width="500" /></a>
 
-ATTENTION: Windows/MSYS is quite sensitive in regards to folder names. So, if you're on Windows, you better make sure to use both a short base folder and short project folder names.
+> ATTENTION: Windows/MSYS is quite sensitive in regards to folder names. So, if you're on Windows, you better make sure to use both a short base folder and short project folder names.

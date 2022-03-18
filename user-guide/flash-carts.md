@@ -5,7 +5,9 @@ title: Flash Carts
 
 # Flash Carts
 
-...
+[...]
+
+<span class="keys target-os-osx">⇧⌥F</span><span class="keys target-os-not-osx">Shift+Alt+F</span>
 
 > Note: VUEngine Studio does not yet support automatic detection of ports, so for HyperFlash32 or HyperBoy carts, you have to manually create the `flashCarts.configs` setting from the settings menu and replace the %PORT% placeholder with the respective port name.
 

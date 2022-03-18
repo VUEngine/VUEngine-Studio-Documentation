@@ -7,6 +7,8 @@ title: Emulator
 
 [...]
 
+<span class="keys target-os-osx">⇧⌥R</span><span class="keys target-os-not-osx">Shift+Alt+R</span>
+
 ## The Built-In Emulator
 
 [...]

@@ -7,7 +7,7 @@ title: User Interface
 
 VUEngine Studio's user interface is modeled after Visual Studio Code, but with more flexibility and an additional right sidepanel and sidebar in mind. Like many other code editors, VUEngine Studio adopts a common user interface and layout of an explorer on the left, showing all of the files and folders you have access to, and an editor in the center, showing the content of the files you have opened.
 
-<img src="/documentation/images/basics/user-interface.png" width="100%" />
+<a href="/documentation/images/basics/user-interface.png"><img src="/documentation/images/basics/user-interface.png" width="100%" /></a>
 
 ## Layout
 

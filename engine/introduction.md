@@ -9,9 +9,7 @@ VUEngine Studio is build around VUEngine, a versatile, object oriented Nintendo 
 
 VUEngine is an attempt to provide other indie developers the base functionality to facilitate the creation of content for the Nintendo Virtual Boy by taking care of most hardware management tasks to create 3D games with 2D graphics.
 
-The name, pronounced as "View Engine", is based on the Virtual Boy's code name, VUE or "Virtual Utopia Experience". Thus standing for "Virtual Utopia Engine", if you will.
-
-## Features:
+## Features
 
 - General features:
   - Automatic frame rate control
