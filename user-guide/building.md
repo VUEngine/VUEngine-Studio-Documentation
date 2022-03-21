@@ -101,8 +101,6 @@ The following modes are available:
   Includes selected asserts, includes debugging tools.
 - **Debug**:
   Includes all runtime assertions, includes debugging tools.
-- **Preprocessor**:
-  The .o files are preprocessor output instead of compiler output.
 
 Normally, you'll work in **Beta** mode, which includes a selected set of debug asserts. When debugging, you'll want to switch to **Tools** mode, to include the engine's various debugging tools, or to **Debug** mode for the full set of runtime assertions and debug output. Be warned that **Debug** mode is heavy on resources and has the potential to slow down your program considerably. Finally, to build a releasable ROM, you'll want to build in **Release** mode to get rid of any asserts or debug flags.
 
