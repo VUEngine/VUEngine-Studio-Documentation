@@ -116,13 +116,13 @@ Sometimes you may want to, or have to, clean up the build folder before starting
 
 ## Pre and Post Build Tasks
 
-If, for some reason, you need to run certain <a href="/documentation/basics/tasks/">Tasks</a> or Commands before or after each build, you can set up pre and post build tasks according to your needs. There's two preferences for that cause that take any number of Tasks or Commands and works through them sequentially.
+If, for some reason, you need to run certain <a href="/documentation/basics/tasks/">Tasks</a> or Commands before or after each build, you can set up pre and post build tasks according to your needs. There's two preferences for that take any number of Tasks or Commands and work through them sequentially.
 
 ```jsonc
 "build.tasks.pre": []
 "build.tasks.post": [{
     "name": "Patch ROM", // Depending on the type, either a task label or command ID.
-    "type": "Task" // Can be either **"Task"** or **"Command"**.
+    "type": "Task" // Can be either "Task" or "Command".
 }]
 ```
 
