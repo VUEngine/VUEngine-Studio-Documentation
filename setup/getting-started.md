@@ -21,6 +21,8 @@ If you have closed the "Getting Started" view and can't see it anymore, you can 
 
 The `New Project` dialog allows you to create a new project based on various template projects.
 
+Additional demos and samples, such as <a href="https://github.com/VUEngine/Capitan-Sevilla-3D">Capitán Sevilla 3D</a>, can be found on our <a href="https://github.com/VUEngine">GitHub</a> page.
+
 <a href="/documentation/images/getting-started/VUEngine-Studio-New-Project-Dialog.png"><img src="/documentation/images/getting-started/VUEngine-Studio-New-Project-Dialog.png" width="500" /></a>
 
 > ATTENTION: Windows/MSYS is quite sensitive in regards to folder names. So, if you're on Windows, you better make sure to use both a short base folder and short project folder names.

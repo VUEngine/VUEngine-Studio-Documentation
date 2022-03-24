@@ -19,9 +19,11 @@ The central spot for building is the Build Panel.
 
 The Action Button Bar (**A**) in the top right of the application allow you to quickly start a build, run or flash a game, or clean the build cache. You'll also be able to see the progress of builds or flash cart writes on the respective buttons.
 
-If you click on **Run** or **Flash** without a ROM being built yet, a build will start and the respective action will be queued and executed once the build is completed. Click the button again to unqueue. Click the other button, respectively, to queue/unqueue that action as well.
+If you click on **Run** or **Flash** without a ROM being built yet, a build will start and the respective action will be queued and executed once the build is completed. Click the button again to unqueue. Click the other button, respectively, to queue/unqueue that action as well. Clicking the Build button while a build is running toggles the Build Panel.
 
-Click the **Clean** button to delete the build cache for the current mode (the `build/{mode}` folder).
+Click the **Clean** button to delete the build cache for the current mode.
+
+The progress bar on the **Build** button will turn yellow once a warning occured. It will be colored red if a build failed.
 
 Keyboard shortcuts:
 
@@ -48,7 +50,7 @@ The Context Buttons (**C**) in the Build Panel's header allow you to (in this or
 
 ### Progress Bar
 
-The Build Progress Bar (**D**) Shows you the progress of the current build.
+The Build Progress Bar (**D**) Shows you the progress of the current build. It will turn yellow once any warnings occur.
 
 ### Button Bar
 
@@ -66,8 +68,7 @@ Below the build button bar, you'll find the current build's status. This include
 
 ### Build Log
 
-The large area in the center of the build panel is holding the Build Log (**G**). In shows the output of the build process running through `make`. Errors are
-highlighted in red, warnings in yellow.
+The large area in the center of the build panel is holding the Build Log (**G**). In shows the output of the build process running through `make`. Errors are highlighted in red, warnings in yellow.
 
 ### Build Log Filter
 
@@ -84,7 +85,7 @@ VUEngine can be built in different modes, for different purposes. You can change
 - Via the respective status bar entry (see screenshot above)
 - Via the `Build: Set Build Mode` command
 - Via the menu: **Build > Set Build Mode**
-- Via the Touch Bar (MacBook Pro devices only)
+- Via the Touch Bar (MacBook Pro only)
 - By changing the respective setting:
 
 ```json
@@ -106,13 +107,23 @@ Normally, you'll work in **Beta** mode, which includes a selected set of debug a
 
 ## Build Options
 
-[...] Dump Elf etc
+Additional build options are available through the settings dialog. These will prove helpful when having to debug harder problems.
+
+- **`Build: Dump Elf`**: Dump assembly code and memory sections.
+- **Pedantic Warnings**: Enable pedantic compiler warnings.
+
+```json
+"build.dumpElf": false
+"build.pedanticWarnings": false
+```
 
 ## Cleaning Build Cache
 
 Sometimes you may want to, or have to, clean up the build folder before starting a build to start with a clean plate.
 
-[...]
+Hit the **Clean** Action Button, use the keyboard shortcut <span class="keys target-os-osx">⇧⌥C</span><span class="keys target-os-not-osx">Shift+Alt+C</span> or use the command palette to execute the `Build: Clean Build Folder` command.
+
+This will delete the respective subfolder in the build folder for the currently selected Build Mode (`build/{mode}`).
 
 ## Pre and Post Build Tasks
 
@@ -138,17 +149,17 @@ When a build fails, you can, in the best case, just follow the error messages to
 
 ### Error diagnosis
 
-Since the engine makes heavy use of pointer's logic, it is really easy to trigger difficult to find bugs. In order to mitigate this issue, the engine provides the following aids:
+Since the engine makes heavy use of pointer logic, it is really easy to trigger difficult to find bugs. In order to mitigate this issue, VUEngine provides the following aids:
 
 #### Asserts
 
-Use the `ASSERT` macro to check every pointer or variable which can be troublesome; in particular, place an `ASSERT` checking that the "this" pointer passed to the class's methods is not NULL.
+Use the `ASSERT` macro to check every pointer or variable which can be troublesome; in particular, place an `ASSERT` checking that the `this` pointer passed to the class's methods is not `NULL`.
 
-The engine provides two kinds of `ASSERT` macros, which check a given statement and throw an exception with a given error message if this statement returns false. These macros should be used throughout the code to make debugging easier. Since the engine relies on heavy pointer usage, it is common to operate on a NULL pointer and get lost.
+The engine provides two kinds of `ASSERT` macros, which check a given statement and throw an exception with a given error message if this statement returns false. These macros should be used throughout the code to make debugging easier. Since the engine relies on heavy pointer usage, it is common to operate on a `NULL` pointer and get lost.
 
 ##### ASSERT
 
-Only inserted when compiling under debug. It is used at the start of most of the engine's methods to check that the "this" pointer is not NULL. Since the MemoryPool writes a 0 in the first byte of a deleted pointer, this helps to assure that any memory slot within the MemoryPool's pools has a 0 when it has been deleted.
+Only inserted when compiling under **Debug** mode. It is used at the start of most of the engine's methods to check that the `this` pointer is not `NULL`. Since the MemoryPool writes a 0 in the first byte of a deleted pointer, this helps to assure that any memory slot within the MemoryPool's pools has a 0 when it has been deleted.
 
 Another good use case for this would be to check an object's class against the expected class as shown below.
 
@@ -161,37 +172,39 @@ ASSERT(__GET_CAST(ClassName, someObject), "ClassName::methodName: Wrong object c
 Inserted under any compilation type (NM stands for "non maskable"). This macro is meant to be placed in sensible parts of the code. Here's a few examples of usage in VUEngine:
 
 - **MemoryPool allocation**:
-  To let you know that the memory is full, otherwise extremely hard to track bugs occur
+  To let you know that the memory is full, otherwise extremely hard to track bugs occur.
 - **SpriteManager, registering a new Sprite**:
-  To let you know that there are no more WORLDs available
+  To let you know that there are no more WORLDs available.
 - **ParamTableManager, registering a new Sprite**:
-  To let you know that param memory is depleted
+  To let you know that param memory is depleted.
 
 #### Initialize everything
 
-One of the most difficult, and common source of hard to diagnose bugs, are uninitialized variables; random crashes or completely strange behavior often are caused by not properly initialized variables. To aid the detection of such mistakes, in the config.h file, define the `__MEMORY_POOL_CLEAN_UP` macro, this will force the engine to put every memory pool's free block to 0 when the game changes its state, so, if the problem solves by defining such macro, the cause is, most likely, a variable not initialized.
+One of the most difficult, and common source of hard to diagnose bugs are uninitialized variables; random crashes or completely strange behavior often are caused by not properly initialized variables. To aid the detection of such mistakes, set `memoryPools.cleanUp` to `true` in `config/Engine.json` to define the `__MEMORY_POOL_CLEAN_UP` macro. This will force the engine to put every memory pool's free block to 0 when the game changes its state, so, if the problem gets solved by defining such macro, the cause is, most likely, an uninitialized variable.
 
 #### MemoryPool size
 
-Whenever crashes appear more or less randomly with alternating exceptions, the cause will be, most likely, a stack overflow. Try to reduce the memory pool size to leave a bit more room for the stack. Since the safe minimum for the stack is about 2KB, your memory pool configuration should not exceed 62KB (depending on how deep the stack can grow because of nested function calls, this limit could be lower; this is specially the case when compiling under debug mode).
+Whenever crashes appear more or less randomly with alternating exceptions, the cause will be, most likely, a stack overflow. Try to reduce the memory pool size to leave a bit more room for the stack. Since the safe minimum for the stack is about 2KB, your memory pool configuration should not exceed 62KB (depending on how deep the stack can grow because of nested function calls, this limit could be lower; this is specially the case when compiling under **Debug** mode).
 
 #### Cast everything
 
 Because the engine implements class inheritance by accumulation of attributes' definitions within macros, it is necessary to cast every pointer of any given class to its base class in order to avoid compiler warnings when calling the base class' methods. This exposes the program to hard to identify errors. In order to mitigate this danger, cast every pointer before passing it to the base class' method by following this pattern:
 
-    BaseClass::method(__SAFE_CAST(BaseClass, object), ...);
+```c
+BaseClass::method(__SAFE_CAST(BaseClass, object), ...);
+```
 
-When compiling for release, the macro is replaced by a simple C type cast; while for debug, the Object_getCast method will be called, returning NULL if the object does not inherit from the given BaseClass, raising an exception in the method (which must check that the "this" pointer isn't NULL).
+When compiling for release, the macro is replaced by a simple C type cast; while for debug, the `Object::getCast` method will be called, returning `NULL` if the object does not inherit from the given BaseClass, raising an exception in the method (which must check that the `this` pointer isn't `NULL`).
 
 #### Exceptions
 
-When an exception is thrown in-game in debug mode, you're presented with some output that's meant to help you find the exact location that is causing the crash. These are last process, LP and SP as well as the exception message.
+When an exception is thrown in-game in **Debug** mode, you're presented with some output that's meant to help you find the exact location that is causing the crash. These are last process, LP and SP as well as the exception message.
 
 Looking for the message in both your game code as well as the engine would be the quickest thing to do but should give you only a rough idea of the problem's root in most cases.
 
-The LP (linker pointer) value shows you the exact location in program where the crash occurred and will lead you to the function that has caused it. Set DUMP_ELF to 1 in the project's config.make file and recompile. The compiler will produce a file called "machine-{TYPE}.asm" in the project's build/{TYPE} folder. It contains a huge list of all functions, their ASM equivalent and memory locations. Search it for your LP value and it will lead you to the faulty function.
+The LP (linker pointer) value shows you the exact location in program where the crash occurred and will lead you to the function that has caused it. Enable the `Build: Dump Elf` setting and recompile. The compiler will produce a file called `machine-{MODE}.asm` in the project's `build/{MODE}` folder. It contains a huge list of all functions, their ASM equivalent and memory locations. Search it for your LP value and it will lead you to the faulty function.
 
-The SP (stack pointer) value becomes useful in the (seldom) case of a stack overflow. Since the check is performed during a timer interrupt, it is possible that an overflow occurs between interrupts. By checking the SP value against the `__lastDataVariable` address in the sections.txt file, you can guess that there was an overflow. As described for the machine.asm file above, activate generation of the sections.txt file in the makefile.
+The SP (stack pointer) value becomes useful in the (seldom) case of a stack overflow. Since the check is performed during a timer interrupt, it is possible that an overflow occurs between interrupts. By checking the SP value against the `__lastDataVariable` address in the `sections.txt` file, you can guess that there was an overflow. As described for the `machine.asm` file above, activate generation of the `sections.txt` file in the makefile.
 
 #### Other useful macros
 
