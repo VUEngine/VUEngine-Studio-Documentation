@@ -5,7 +5,7 @@ title: Getting Started
 
 # Getting Started
 
-When opening VUEngine Studio, you'll be greeted with the "Getting Started" view as seen in the screenshot below. From there you can either open an existing project by clicking on the `Open Folder` or `Open Workspace` buttons or create a new one by clicking the `Open New Project` button.
+When opening VUEngine Studio, you'll be greeted with the "Getting Started" view as seen in the screenshot below. From there you can either open an existing project by clicking on the `Open Folder` or `Open Workspace` buttons or create a new one by clicking the `New Project` button.
 
 If you have opened any projects before, you'll see a handy list here as well under `Recent`. Click to open any of these project.
 
@@ -20,6 +20,8 @@ If you have closed the "Getting Started" view and can't see it anymore, you can 
 ## New Project
 
 The `New Project` dialog allows you to create a new project based on various template projects.
+
+[...]
 
 Additional demos and samples, such as <a href="https://github.com/VUEngine/Capitan-Sevilla-3D">Capitán Sevilla 3D</a>, can be found on our <a href="https://github.com/VUEngine">GitHub</a> page.
 
